@@ -1,7 +1,7 @@
 import './App.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from './Button';
-import React, { useState } from "react";
+import  { useState } from "react";
 import axios from "axios"; 
 
 function Login(props){
@@ -66,7 +66,7 @@ const handleSubmit = async (e) => {
 	<div className="logininput">
 	<label>Email </label><br/><input type="text"  name="email" value={email} onChange={handleform}  /><br/>
 	<label>Password</label><br/><input type="Password" name="Pass" value={Pass} onChange={handleform} /><br/>
-	<input type="checkbox" name="agree" onChange={handleform} /> <label className="change">i agree to conditions of use and privacy</label><br/>
+	<input type="checkbox" name="agree" onChange={handleform} value={agree}/> <label className="change">i agree to conditions of use and privacy</label><br/>
 	<input type="submit" name="submit" value="Login" onClick={handleSubmit}/>
 	
 	<p className="response">

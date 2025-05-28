@@ -19,7 +19,7 @@ function Register(props){
 		Pass:"",
 		agree:false
 	});	
-const {surname,FN,ON,sex,course,MON,email,jamb,Pass,agree}=schooldata;
+const {surname,FN,ON,sex,course,MON,email,Pass,agree}=schooldata;
 const [responseMessage,setResponseMessage] = useState("");
 function handleform(event){
 		const {type, name, value,checked}= event.target;
@@ -62,17 +62,17 @@ const handleSubmit = async (e) => {
 	<div className="subdiv twotwo tworeg">
 	<h1>Register Now</h1>
 	<div className="logininput">
-	<label><b>Surname :</b></label><br/><input type="text" name="surname" placeholder =" Enter your Surname" onChange={handleform}/><br/>
-	<label><b>First Name :</b></label><br/><input type="text" name="FN" placeholder ="Enter your First Name" onChange={handleform} /><br/>
-	<label><b>Other Name :</b></label><br/><input type="text" name="ON" placeholder ="enter your other names" onChange={handleform}/><br/>
-	<b className="shifts">Sex :</b><label><b> Male </b> </label> <input type="radio" name="sex" value="male" onChange={handleform}/> <label> <b>Female </b></label> <input type="radio" name= "sex" value ="female" onChange={handleform}/> <br/>
-	<label><b>Course :</b></label><br/><input type="text" name="course" placeholder ="e.g microbiology" onChange={handleform}/> <br/> 
+	<label><b>Surname :</b></label><br/><input type="text" name="surname" placeholder =" Enter your Surname" value={surname} onChange={handleform}/><br/>
+	<label><b>First Name :</b></label><br/><input type="text" name="FN" placeholder ="Enter your First Name" value={FN} onChange={handleform} /><br/>
+	<label><b>Other Name :</b></label><br/><input type="text" name="ON" placeholder ="enter your other names" value={ON} onChange={handleform}/><br/>
+	<b className="shifts">Sex :</b><label><b> Male </b> </label> <input type="radio" name="sex"  value={sex} onChange={handleform}/> <label> <b>Female </b></label> <input type="radio" name= "sex" value ="female" onChange={handleform}/> <br/>
+	<label><b>Course :</b></label><br/><input type="text" name="course" placeholder ="e.g microbiology" value={course} onChange={handleform}/> <br/> 
 
-	<label> <b> Mode Of Entry :</b></label> <br/><select name ="MON" onChange={handleform} ><option name ="MON" value ="direct entry" >Direct Entry </option> <option name ="MON" value="jamb" >Jamb</option> </select><br/> 
-<label><b>Email Address :</b></label><br/><input type="text" name="email" placeholder ="Enter your email Address" onChange={handleform} /><br/> 
+	<label> <b> Mode Of Entry :</b></label> <br/><select name ="MON" value={MON} onChange={handleform} ><option name ="MON" value ="direct entry" >Direct Entry </option> <option name ="MON" value="jamb" >Jamb</option> </select><br/> 
+<label><b>Email Address :</b></label><br/><input type="text" name="email" placeholder ="Enter your email Address" value={email} onChange={handleform} /><br/> 
 
-<label> <b> Password :</b> </label> <input type="password" name ="Pass" placeholder="enter your password" onChange={handleform}/> <br/>
-<input type="checkbox" name="agree"  onChange={handleform} /> <label><b> I Agree to terms and condition guiding the use of this site </b></label> <br/>
+<label> <b> Password :</b> </label> <input type="password" name ="Pass" placeholder="enter your password" value={Pass} onChange={handleform}/> <br/>
+<input type="checkbox" name="agree" value={agree} onChange={handleform} /> <label><b> I Agree to terms and condition guiding the use of this site </b></label> <br/>
 <input type="submit" name="submit" value="Create" onClick={handleSubmit}/> <br/>
 <p className="response">
 	  {responseMessage}

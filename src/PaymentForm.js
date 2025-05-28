@@ -24,23 +24,18 @@ function PaymentForm() {
       document.body.removeChild(script);
     };
   }, []);
-
-  // Handle form input changes
-  {/* const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };*/}
   
   const handleChange = (e) => {
   const { name, value } = e.target;
 
-  // Set amount automatically based on selected payment type
+  
   if (name === "paymentfor") {
     let autoAmount = "";
 
     if (value === "schoolfee") {
-      autoAmount = "100000"; // 💵 You can set your own logic or fetch from backend
+      autoAmount = "100000"; 
     } else if (value === "otherfess") {
-      autoAmount = "5000"; // 💵 Same here
+      autoAmount = "5000"; 
     }
 
     setFormData({
@@ -72,7 +67,7 @@ function PaymentForm() {
       ref: '' + Math.floor(Math.random() * 1000000000 + 1),
 
       callback: function (response) {
-        // SUCCESSFUL PAYMENT
+        
         axios.post('http://localhost:3000/save-payment', {
           reference: response.reference,
           email: storedUser?.email,
@@ -84,8 +79,8 @@ function PaymentForm() {
         })
         .then(res => {
           console.log("Payment saved:", res.data);
-		  setFormData({ phone: "", amount: "", paymentfor: "" }); // RESET FORM
-			// In callback after successful payment
+		  setFormData({ phone: "", amount: "", paymentfor: "" });
+			
 			localStorage.setItem("totalPayable", "0");
 
           window.location.href = "/payment-success";
@@ -93,7 +88,7 @@ function PaymentForm() {
         .catch(err => {
           console.error("Failed to save successful payment:", err);
 
-          // RECORD AS FAILED IF BACKEND FAILS
+         
           axios.post('http://localhost:3000/save-payment', {
             reference: response.reference,
             email: storedUser?.email,
@@ -107,7 +102,7 @@ function PaymentForm() {
       },
 
       onClose: function () {
-        // PAYMENT CANCELLED BY USER
+        
         axios.post('http://localhost:3000/save-payment', {
           reference: "cancelled-" + Math.floor(Math.random() * 1000000000),
           email: storedUser?.email,
@@ -119,13 +114,13 @@ function PaymentForm() {
         })
         .then(res => {
           console.log("Cancelled payment saved:", res.data);
-		  setFormData({ phone: "", amount: "", paymentfor: "" }); // RESET FORM
+		  setFormData({ phone: "", amount: "", paymentfor: "" }); 
 
           setPaymentresponse("❌ Payment was cancelled.");
         })
         .catch(err => {
           console.error("Failed to save cancelled payment:", err);
-		  setFormData({ phone: "", amount: "", paymentfor: "" }); // RESET FORM
+		  setFormData({ phone: "", amount: "", paymentfor: "" }); 
 
           setPaymentresponse("❌ Payment was cancelled. Failed to save.");
         });
