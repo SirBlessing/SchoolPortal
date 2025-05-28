@@ -9,7 +9,7 @@ function Enrolledcoursecard(props){
 	<Button value={butvalll} />
 	</div>
 	<div>
-	<img src={require("./image/" + props.image)} alt="my Test Image" />
+	<img src={require("./image/" + props.image)} alt="viii" />
 	</div>
 	</div>
 	);

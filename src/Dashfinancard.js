@@ -4,7 +4,7 @@ function Dashfinancard(props){
 	
 	return(
 	<div className = "dashcard"><center>
-    <img src={require("./image/" + props.image)} alt="my Test Image" />
+    <img src={require("./image/" + props.image)} alt="vieg" />
 	<p><b>{props.cardprice}</b></p>
 	<p>{props.cardtext}</p>
 	
