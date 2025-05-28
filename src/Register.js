@@ -1,6 +1,6 @@
 import './App.css';
-import logooo from './image/logooo.png';
-import React, { useState } from "react";  // useState comes from React
+// import logooo from './image/logooo.png';
+import  { useState } from "react";  // useState comes from React
 import { Link,useNavigate } from "react-router-dom";  // useNavigate comes from react-router-dom
 
 import Button from './Button';

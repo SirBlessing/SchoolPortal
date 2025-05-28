@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import {Link, useNavigate } from "react-router-dom";
-import axios from "axios"; 
+// import axios from "axios"; 
 import abimg from './image/abimg.jpg';
 import Dashfinancard from './Dashfinancard';
 import galimg2 from './image/galimg2.jpg';
 import galimg3 from './image/galimg3.jpg';
-import group1 from './image/group1.png';
-import PC from './image/PC.png';
-import group16 from './image/group16.png';
+// import group1 from './image/group1.png';
+// import PC from './image/PC.png';
+// import group16 from './image/group16.png';
 import Enrolledcoursecard from './Enrolledcoursecard';
 import collegestudent from './image/collegestudent.png';
 import schoolscrol from './image/schoolscrol.png';
 import Backpack from './image/Backpack.png';
-import HamburgerMenu from "./HamburgerMenu";
-import ProfilePicUpload from './ProfilePicUpload';
+// import HamburgerMenu from "./HamburgerMenu";
+// import ProfilePicUpload from './ProfilePicUpload';
 import $ from 'jquery';
 
 
@@ -149,9 +149,9 @@ setProfilepics(`http://localhost:3000/uploads/${data.file.filename}`);
 		<p>Always stay updated in your student portal</p>
 		</div>
 		<div className="placeholderdisplay">
-		<img src={schoolscrol}/>
-		<img src={collegestudent}/>
-		<img src={Backpack}/>
+		<img src={schoolscrol}  alt="Campus view"/>
+		<img src={collegestudent}  alt="Campus view"/>
+		<img src={Backpack}  alt="Campus view"/>
 		</div>
 		</div>
 		<div className="financediv">
@@ -166,9 +166,9 @@ setProfilepics(`http://localhost:3000/uploads/${data.file.filename}`);
 		
 		<h4>Course instructors</h4>
 		<div className="textdashdiv">
-		<img src={galimg3}/>
-		<img src={galimg2}/>
-		<img src={galimg3}/>
+		<img src={galimg3}  alt="Campus view"/>
+		<img src={galimg2}  alt="Campus view"/>
+		<img src={galimg3}  alt="Campus view"/>
 		
 		</div>
 		
